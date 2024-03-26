@@ -9,9 +9,9 @@ export default function App() {
   const [billAmount, setBillAmount] = useState(0);
 
   // rating of the service must be lifted up to parent component
-  const [rating, setRating] = useState(10);
+  const [rating, setRating] = useState(0);
 
-  const [friendRating, setFriendRating] = useState(10);
+  const [friendRating, setFriendRating] = useState(0);
 
   function handleBillChange(b) {
     setBillAmount(b);
@@ -23,6 +23,12 @@ export default function App() {
 
   function handleFriendRatingSelection(r) {
     setFriendRating(r);
+  }
+
+  function handleReset() {
+    setBillAmount(0);
+    setRating(0);
+    setFriendRating(0);
   }
 
   return (
@@ -43,6 +49,11 @@ export default function App() {
         rating={rating}
         friendrating={friendRating}
       />
+      <Reset onReset={handleReset} />
     </>
   );
+}
+
+function Reset({ onReset }) {
+  return <button onClick={onReset}>Reset</button>;
 }

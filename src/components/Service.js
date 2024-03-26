@@ -15,6 +15,8 @@ export default function Service({
               : onRatingSelection(Number(e.target.value));
           }}
         >
+          <option value={0}>Poor(0%)</option>
+          <option value={5}>Dissatisfied(5%)</option>
           <option value={10}>It could have been better (10%)</option>
           <option value={20}>It was ok (20%)</option>
           <option value={30}>It was good (30%)</option>
